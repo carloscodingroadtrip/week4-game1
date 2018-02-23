@@ -24,10 +24,8 @@ $(document).ready(function() {
   // //Evaluate each click from the user and add it to a sum
   $(".items").on("click", function() {
     userClickedVal = parseInt($(this).attr("hiddenValue"));
-    console.log('the crystal value was ' + userClickedVal);
     sum += userClickedVal;
     $("#total").text(sum);
-    console.log("sum INSIDE :" + sum);
     //Evaluate the total against the match number
     if (sum > randomMatch) {
       losses++;
@@ -38,7 +36,6 @@ $(document).ready(function() {
       $("#winsholder").text(wins);
       deactivateCrystals();
     }
-
     function deactivateCrystals() {
       $(".items").addClass("active");
       setTimeout(playAgain, 2000);

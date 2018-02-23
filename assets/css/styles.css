@@ -111,7 +111,7 @@ a.linkButton h1:hover {
 
 /* header */
 #header {
- 	background: url(../images/hero.jpg) center center no-repeat;
+ 	/* background: url(../images/hero.jpg) center center no-repeat; */
  	background-size: cover;
  	height: 100%;
  	color: #1a1a1a;
