@@ -1,91 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <!-- Added link to the jQuery Library -->
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Added link to the jQuery Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,900i" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css">
 
-    <title>Crystal Game :: Javascript Project by Carlos Molina</title>
+  <title>Crystal Game :: Javascript Project by Carlos Molina</title>
 </head>
+
 <body>
-    <!-- CREATE MY NAVIGATINO BAR -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-bar" aria-controls="navigation-bar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon">&#9776;</span>
-        </button>
+  <!-- CREATE MY NAVIGATINO BAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-bar" aria-controls="navigation-bar"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">&#9776;</span>
+    </button>
 
-      <a class="navbar-branch linkButton" href="#header">
-        <h1>Carlos Molina</h1>
-      </a>
-      <div class="collapse navbar-collapse" id="navigation-bar">
-          <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="#header">HOME</a></li>
-        </ul>
+    <a class="navbar-branch linkButton" href="#header">
+      <h1>Carlos Molina</h1>
+    </a>
+    <div class="collapse navbar-collapse" id="navigation-bar">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#header">HOME</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- HEADER Section  -->
+  <section id="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div id="matchme"></div>
+          <div id="buttons">
+            <button id="item1" class="btn btn-primary btn-lg items">
+              <img src="./assets/images/1.png" class="crystals" />
+            </button>
+            <button id="item2" class="btn btn-primary btn-lg items">
+              <img src="./assets/images/2.png" class="crystals" />
+            </button>
+            <button id="item3" class="btn btn-primary btn-lg items">
+              <img src="./assets/images/3.png" class="crystals" />
+            </button>
+            <button id="item4" class="btn btn-primary btn-lg items">
+              <img src="./assets/images/4.png" class="crystals" />
+            </button>
+          </div>
+        </div>
       </div>
-     </nav>
-
-     <!-- HEADER Section  -->
-    <section id="header">
-            <div class="container">
-              <div class="row">
-                <div class="col-12">
-                    <div id="matchme"></div>
-                    <div id="buttons">
-                        <button id="item1" class="btn btn-primary btn-lg items">
-                          <img src="images/1.png" class="crystals"/>
-                        </button>
-                        <button id="item2" class="btn btn-primary btn-lg items">
-                          <img src="images/2.png" class="crystals"/>
-                        </button>
-                        <button id="item3" class="btn btn-primary btn-lg items">
-                          <img src="images/3.png" class="crystals"/>
-                        </button>
-                        <button id="item4" class="btn btn-primary btn-lg items">
-                          <img src="images/4.png" class="crystals"/>
-                        </button>
-                      </div>
-                </div>
-              </div>
-              <div class="row">
-                  <div id="total"></div>
-              </div>
-              <div class="row">
-                    <div class="col-md-6">
-                      <div class="row">
-                      <div class="col-md-3">
-                          <h1>Wins:<span id="winsholder">0</span></h1>
-                          <h1>Losses:<span id="lossesholder">0</span></h1>
-                      </div>
-                      <div class="col-md-3">
-                      </div>
-                    </div>
-                    </div>
-                    <div class="col-md-6"></div>
+      <div class="row">
+        <div id="total" class="col-12"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6">
+              <h1>Wins:
+                <span id="winsholder"></span>
+              </h1>
+              <h1>Losses:
+                <span id="lossesholder"></span>
+              </h1>
             </div>
-
-
-
-
-
-
-
-
-
-
-              </div>
-
+            <div class="col-md-3">
             </div>
-          </section>
-
-    <script src="main.js"></script>
+          </div>
+        </div>
+        <div class="col-md-6"></div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <script src="./assets/javascript/main.js"></script>
 </body>
+
 </html>
