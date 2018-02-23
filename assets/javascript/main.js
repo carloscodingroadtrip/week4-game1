@@ -7,18 +7,17 @@ $(document).ready(function() {
   var userClickedVal=0;
 
   function play() {
-    //Generate a random numberfunction randomMatch() {
+    //Generate a random number for my crystals
     randomMatch = Math.floor(Math.random() * 102) + 19;
+    //PLACE the match
     $("#matchme").text(randomMatch);
-    console.log('random match PC ' + randomMatch);
     //Generate the hidden values for the crystals
-    function addHiddenValues() {
+    (function addHiddenValues() {
       for (i = 1; i < 5; i++) {
         hiddenValue = Math.floor(Math.random() * 12) + 1; //Crystal Random #
-        $("#item" + i).attr("hiddenValue", hiddenValue)[0];
+        $("#item" + i).attr("hiddenValue", hiddenValue)[0]; //inject random value to each crystal
       }
-    }
-    addHiddenValues();
+    })();
   }
    play();
 
@@ -29,21 +28,20 @@ $(document).ready(function() {
     sum += userClickedVal;
     $("#total").text(sum);
     console.log("sum INSIDE :" + sum);
+    //Evaluate the total against the match number
     if (sum > randomMatch) {
       losses++;
       $("#lossesholder").text(losses);
-      console.log("YOU LOSS !!!!!! :" + sum);
       deactivateCrystals();
     } else if (sum === randomMatch) {
       wins++;
       $("#winsholder").text(wins);
-      console.log("YOU WON !!!!!! :" + sum);
       deactivateCrystals();
     }
 
     function deactivateCrystals() {
       $(".items").addClass("active");
-      setTimeout(playAgain, 5000);
+      setTimeout(playAgain, 2000);
     }
   });
 
@@ -57,10 +55,5 @@ $(document).ready(function() {
     sum=0;
     userClickedVal=0;
     play();
-    console.log("-----------------------------");
-    console.log("---A NEW GAME JUST STARTED----");
-    console.log("-----------------------------");
-    console.log("match AFTER WIN/LOSS : " + randomMatch);
   }
-
 });
