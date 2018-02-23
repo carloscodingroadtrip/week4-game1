@@ -46,7 +46,6 @@ $(document).ready(function() {
   });
 
   function playAgain() {
-    //console.log("sum after win/loss: " + sum);
     $(".items").removeClass("active");
     $("#total").empty();
     $("#matchme").empty();
